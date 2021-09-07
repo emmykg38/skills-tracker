@@ -78,19 +78,26 @@ public class SkillsController {
     @ResponseBody
     public String showFavoriteLangs(@RequestParam String name, @RequestParam String programmingLang1,
                                     @RequestParam String programmingLang2,
-                                    @RequestParam String programmingLang3, Model model) {
-        model.addAttribute("name", name);
-        model.addAttribute("programmingLang1", programmingLang1);
-        model.addAttribute("programmingLang2", programmingLang2);
-        model.addAttribute("programmingLang3", programmingLang3);
+                                    @RequestParam String programmingLang3) {
+//        model.addAttribute("name", name);
+//        model.addAttribute("programmingLang1", programmingLang1);
+//        model.addAttribute("programmingLang2", programmingLang2);
+//        model.addAttribute("programmingLang3", programmingLang3);
         return  "<html>" +
                 "<body>" +
                 "<h1>" + name + "</h1>" +
-                "<ol>" +
-                    "<li>" + programmingLang1 + "</li>" +
-                    "<li>" + programmingLang2 + "</li>" +
-                    "<li>" + programmingLang3 + "</li>" +
-                "</ol>" +
+                "<table>" +
+                    "<tr></tr>" +
+                        "<td>Favorite Programming Language: </td>" +
+                        "<td>" + programmingLang1 + "</td>" +
+                    "<tr>" +
+                        "<td>Second Favorite Programming Language: </td>" +
+                        "<td>" + programmingLang2 + "</td>" +
+                    "</tr>" +
+                    "<tr></tr>" +
+                        "<td>Third Favorite Programming Language: </td>" +
+                        "<td>" + programmingLang3 + "</td>" +
+                "</table>" +
                 "</body>" +
                 "</html>";
     }
